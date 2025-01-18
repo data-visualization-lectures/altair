@@ -3,13 +3,9 @@
 Overview
 ========
 
-Vega-Altair is a declarative statistical visualization library for Python, based on
-Vega_ and Vega-Lite_.
+Vega-Altair は、Vega_ および Vega-Lite_ をベースにした、Python 用の宣言型統計可視化ライブラリです。
 
-It offers a powerful and concise grammar that enables you to quickly build
-a wide range of statistical visualizations. Here is an example of using the
-API to visualize a dataset with
-an interactive scatter plot:
+強力で簡潔な文法を提供し、幅広い統計可視化をすばやく構築できます。以下は、API を使用してインタラクティブな散布図でデータセットを視覚化する例です:
 
 .. altair-plot::
 
@@ -27,16 +23,12 @@ an interactive scatter plot:
         color='Origin',
     ).interactive()
 
-The key idea is that you are declaring links between *data columns* and *visual encoding
-channels*, such as the x-axis, y-axis and color. The rest of the plot details are
-handled automatically. Building on this declarative system, a surprising range
-of plots, from simple to sophisticated, can be created using a
-concise grammar.
+重要なアイデアは *データ列* と *視覚エンコーディング チャネル* (x 軸、y 軸、色など) の間のリンクを宣言することです。プロットの残りの詳細は自動的に処理されます。この宣言型システムを基に、簡潔な文法を使用して、シンプルなものから高度なものまで、驚くほど幅広いプロットを作成できます。
 
-The project is named after the `brightest star <https://en.wikipedia.org/wiki/Altair>`_ 
-in the constellation Aquila. From Earth's sky Altair appears close to Vega, the star from which our parent project drew its name.
+このプロジェクトは、わし座の `最も明るい星(Altair) <https://en.wikipedia.org/wiki/Altair>`_ にちなんで名付けられました。地球の空から見ると、Altair は、親プロジェクトの名前の由来となった星である Vega の近くに見えます。
 
-This documentation serves as the main reference for learning about Altair. Additional learning material and tutorials can be found in the :ref:`learning-resources` section. It can also be helpful to browse the `Vega-Lite documentation <https://vega.github.io/vega-lite/docs/>`_.
+このドキュメントは、Altair を学習するための主なリファレンスとして機能します。追加の学習資料とチュートリアルは :ref:`learning-resources` セクションにあります。`Vega-Lite ドキュメント <https://vega.github.io/vega-lite/docs/>`_ を参照することも役立ちます。
+
 
 .. _Vega: http://vega.github.io/vega
 .. _Vega-Lite: http://vega.github.io/vega-lite
