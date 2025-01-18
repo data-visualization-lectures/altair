@@ -32,10 +32,10 @@ simple user interface can construct a visualization without any coding.
 
 たとえば、2 つの数値列の可視化に興味がある場合、散布図はほぼ間違いなく良い出発点です。これにカテゴリ列を追加する場合は、色またはファセットを使用してその列をエンコードする必要があります。可視化の推測が難しい場合は、シンプルなユーザー インターフェイスを使用して、コーディングなしで可視化を構築できます。以下のツールは、このような UI の優れた例です。
 
-`Tableau <https://www.tableau.com/>`_
-`Interactive Data Lab's <https://idl.cs.washington.edu/>`_
-`Polestar <https://github.com/vega/polestar>`_
-`Voyager <https://github.com/vega/voyager>`_
+* `Tableau <https://www.tableau.com/>`_
+* `Interactive Data Lab's <https://idl.cs.washington.edu/>`_
+* `Polestar <https://github.com/vega/polestar>`_
+* `Voyager <https://github.com/vega/voyager>`_
 
 設計アプローチとソリューション
 ----------------------------
