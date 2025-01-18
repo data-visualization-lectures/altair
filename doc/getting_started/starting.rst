@@ -21,7 +21,7 @@ Basic Statistical Visualization
 
 .. _basic-tutorial-data:
 
-The Data
+データ
 --------
 
 Data in Altair is built around the pandas Dataframe. One of the defining
@@ -46,7 +46,7 @@ Altair を使用する場合、データセットはデータフレームとし�
 
 .. _basic-tutorial-chart-object:
 
-The Chart Object
+チャート・オブジェクト
 ----------------
 
 Altair の基本オブジェクトは :class:`Chart` で、データフレームを 1 つの引数として受け取ります:
@@ -61,7 +61,7 @@ Altair の基本オブジェクトは :class:`Chart` で、データフレーム
 
 .. _basic-tutorial-encodings-and-marks:
 
-Encodings and Marks
+エンコーディングとマーク
 -------------------
 
 このチャート オブジェクトが手元にあるので、データをどのように可視化するかを指定できます。
@@ -110,7 +110,7 @@ pandas データフレームの場合、Altair はマッピングされた列の
 
 .. _basic-tutorial-aggregation:
 
-Data Transformation: Aggregation
+データ変換: 集約
 --------------------------------
 
 データの視覚化方法をより柔軟にするために、Altair にはデータの *集計* 用の組み込み構文があります。
@@ -147,7 +147,7 @@ Data Transformation: Aggregation
         x='average(b)'
     )
 
-Aside: Examining the JSON Output
+余談: JSON出力の検証
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Altair の主な目的は、プロット仕様を Vega-Lite スキーマに準拠する JSON 文字列に変換することであることを思い出してください。
@@ -199,12 +199,12 @@ Altair の完全な省略構文には、列のタイプを指定する方法も�
 
 .. _basic-tutorial-customization:
 
-Customizing your Visualization
+可視化のカスタマイズ
 ------------------------------
 
-デフォルトでは、Altair は Vega-Lite を介して視覚化のデフォルト プロパティについていくつかの選択を行います。
+デフォルトでは、Altair は Vega-Lite を介して可視化のデフォルト プロパティについていくつかの選択を行います。
 
-Altair は視覚化の外観をカスタマイズするための API も提供します。
+Altair は可視化の外観をカスタマイズするための API も提供します。
 
 たとえば、チャネル クラスの :meth:`title` メソッドを使用して軸のタイトルを指定したり、 ``Chart.mark_*`` メソッドの ``color`` キーワードを任意の有効な HTML 色文字列に設定してマークの色を指定したりできます。
 
@@ -218,7 +218,7 @@ Altair は視覚化の外観をカスタマイズするための API も提供�
 
 .. _basic-tutorial-publishing:
 
-Publishing your Visualization
+可視化の公開
 -----------------------------
 
 データを可視化したら、それを Web 上のどこかに公開したいと考えるかもしれません。これは、Vega-Embed_ Javascript パッケージを使用して簡単に実行できます。
