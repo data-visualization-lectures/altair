@@ -2,39 +2,38 @@
 
 .. _installation:
 
-Installation
+インストール
 ============
 
-Altair can be installed, along with all its optional dependencies, using:
+Altair は、オプションの依存関係すべてとともに、次のコマンドを使用してインストールできます:
 
 .. code-block:: bash
 
     pip install "altair[all]"
 
-If you are using the conda_ package manager, the equivalent is:
+conda_ パッケージ マネージャーを使用している場合は、次のようになります:
 
 .. code-block:: bash
 
     conda install -c conda-forge altair-all
 
-At this point, you should be able to open any IDE compatible with Jupyter Notebooks,
-and execute any of the code from the :ref:`example-gallery`.
-For more information on how to display charts in various notebook environments
-and non-notebook IDEs, see :ref:`displaying-charts`.
-If you wish to install Altair with only the required dependencies,
-you can omit the ``[all]``/``-all`` suffix.
 
-Altair can also be installed with just the dependencies necessary for saving charts to offline HTML files or PNG/SVG/PDF formats, using:
+この時点で、Jupyter Notebook と互換性のある任意の IDE を開いて、:ref:`example-gallery` のコードを実行できるはずです。
+さまざまなノートブック環境およびノー​​トブック以外の IDE でチャートを表示する方法の詳細については、:ref:`displaying-charts` を参照してください。
+必要な依存関係のみを使用して Altair をインストールする場合は  ``[all]``/``-all`` サフィックスを省略できます。
+次のものを使用して、チャートをオフライン HTML ファイルまたは PNG/SVG/PDF 形式で保存するために必要な依存関係のみを使用して Altair をインストールすることもできます。
+
+Altair は、次のものを使用して、チャートをオフライン HTML ファイルまたは PNG/SVG/PDF 形式で保存するために必要な依存関係のみをインストールすることもできます:
 
 .. code-block:: bash
 
     pip install "altair[save]"
 
-Development Installation
+開発インストール
 ========================
 
-Please see `CONTRIBUTING.md <https://github.com/vega/altair/blob/main/CONTRIBUTING.md>`_
-for details on how to contribute to the Altair project.
+Altair プロジェクトへの貢献方法の詳細については  `CONTRIBUTING.md <https://github.com/vega/altair/blob/main/CONTRIBUTING.md>`_ を参照してください。
+
 
 .. _conda: https://docs.conda.io/
 .. _Vega-Lite: http://vega.github.io/vega-lite

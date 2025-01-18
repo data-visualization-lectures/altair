@@ -24,12 +24,6 @@ Python には、次のような優れたプロット・ライブラリが多数�
 
 もう 1 つの課題は、現在のプロット API では、可視化の付随的な詳細であっても、ユーザーがコードを記述する必要があることです。これにより、可視化の種類 (ヒストグラム、散布図など) は、関心のある列やその列のデータ型などの基本情報を使用して推測できることが多いため、残念で不必要な認知的負担が生じます。
 
-For example, if you are interested in the visualization of two numerical
-columns, a scatterplot is almost certainly a good starting point. If you add
-a categorical column to that, you probably want to encode that column using
-colors or facets. If inferring the visualization proves difficult at times, a
-simple user interface can construct a visualization without any coding.
-
 たとえば、2 つの数値列の可視化に興味がある場合、散布図はほぼ間違いなく良い出発点です。これにカテゴリ列を追加する場合は、色またはファセットを使用してその列をエンコードする必要があります。可視化の推測が難しい場合は、シンプルなユーザー インターフェイスを使用して、コーディングなしで可視化を構築できます。以下のツールは、このような UI の優れた例です。
 
 * `Tableau <https://www.tableau.com/>`_

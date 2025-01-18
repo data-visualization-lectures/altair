@@ -1,16 +1,14 @@
 Getting Help
 ============
 
-Altair is BSD-licensed and the source is available on `GitHub`_,
-where you can also report `bugs and feature requests`_.
-For general questions, please ask on `StackOverflow`_
-using the `altair` tag.
+Altair は BSD ライセンスで、ソースは `GitHub`_ で入手できます。
+また `bugs and feature requests`_ を報告することもできます。
+一般的な質問については `altair`タグを使用して `StackOverflow`_ で質問してください。
 
-You can browse this documentation
-via the links in the top navigation panel
-or by viewing the full site :ref:`genindex`.
-In addition to reading this documentation page,
-it can be helpful to also browse the `Vega-Lite documentation <https://vega.github.io/vega-lite/docs/>`_.
+このドキュメントは、上部のナビゲーション パネルのリンクから、またはサイト全体を表示して参照できます :ref:`genindex`。
+このドキュメント ページを読むことに加えて、
+`Vega-Lite ドキュメント <https://vega.github.io/vega-lite/docs/>`_ も参照すると役立ちます。
+
 
 .. _GitHub: http://github.com/vega/altair
 .. _Git Issues: http://github.com/vega/altair/issues
