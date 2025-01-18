@@ -16,7 +16,7 @@ Altair に関連する学習リソースやプロジェクトをここにリス�
 `Visualization Curriculum`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Vega-Lite を開発した UW データ グループによるデータ視覚化カリキュラム。
+Vega-Lite を開発した UW データ グループによるデータ可視化カリキュラム。
 
 .. List of links.
 .. _`Visualization Curriculum`: https://uwdata.github.io/visualization-curriculum
@@ -24,7 +24,7 @@ Vega-Lite を開発した UW データ グループによるデータ視覚化�
 `Jupyter Notebook Tutorials`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Jupyter Notebook tutorials and examples from the Altair authors.
+Altair の著者による Jupyter Notebook のチュートリアルとサンプル・ファイル。
 
 .. List of links.
 .. _`Jupyter Notebook チュートリアル`: https://github.com/altair-viz/altair_notebooks
