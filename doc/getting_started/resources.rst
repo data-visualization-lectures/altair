@@ -1,21 +1,22 @@
 .. _resources:
 
-Resources
+リソース
 =========
 
-We hope to make it easier to find learning resources and projects related to Altair by listing them here. If you know of a project that should be added, please let us know by opening an `Issue on GitHub <https://github.com/vega/altair/issues>`_.
+Altair に関連する学習リソースやプロジェクトをここにリストすることで、見つけやすくしたいと考えています。追加すべきプロジェクトをご存知の場合は  `Issue on GitHub <https://github.com/vega/altair/issues>`_ を開いてお知らせください。
+
 
 .. _learning-resources:
 
-Learning Material
+学習教材
 -----------------
 
-This is a list of learning material that complements the official documentation and can help you learn more about how to use Altair.
+これは、公式ドキュメントを補完し、Altair の使用方法についてさらに学習するのに役立つ学習教材のリストです。
 
 `Visualization Curriculum`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A data visualization curriculum from the UW data group that developed Vega-Lite.
+Vega-Lite を開発した UW データ グループによるデータ視覚化カリキュラム。
 
 .. List of links.
 .. _`Visualization Curriculum`: https://uwdata.github.io/visualization-curriculum
@@ -26,12 +27,12 @@ A data visualization curriculum from the UW data group that developed Vega-Lite.
 Jupyter Notebook tutorials and examples from the Altair authors.
 
 .. List of links.
-.. _`Jupyter Notebook Tutorials`: https://github.com/altair-viz/altair_notebooks
+.. _`Jupyter Notebook チュートリアル`: https://github.com/altair-viz/altair_notebooks
 
 `Pycon Tutorial`_
 ~~~~~~~~~~~~~~~~~
 
-Altair tutorial given at PyCon 2018 by the Altair author Jake VanderPlas.
+Altair の作者 Jake VanderPlas が PyCon 2018 で行った Altair チュートリアル。
 
 .. List of links.
 .. _`Pycon tutorial`: https://altair-viz.github.io/altair-tutorial
@@ -39,7 +40,8 @@ Altair tutorial given at PyCon 2018 by the Altair author Jake VanderPlas.
 `Data Visualization Course`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This course covers how to create common statistical visualizations, tell stories with data, create geographical visualizations, and bring plots to life by adding interactive elements. Created at the University of British Columbia and can either be audited or taken as part of the `Key Capabilities for Data Science`_ certificate program.
+このコースでは、一般的な統計的可視化の作成方法、データを使ったストーリーテリング、地理的ビジュアライゼーションの作成方法、そしてインタラクティブ要素を追加してプロットをより魅力的にする方法を学びます。ブリティッシュ・コロンビア大学で作成され、聴講として受講することも `Key Capabilities for Data Science`_ 証明書プログラムの一部として受講することもできます。
+
 
 .. List of links.
 .. _`Data Visualization Course`: https://viz-learn.mds.ubc.ca
@@ -48,7 +50,7 @@ This course covers how to create common statistical visualizations, tell stories
 `Brief Introduction Videos`_
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Calmcode provides a few videos that give a brief overview of the Altair library.
+Calmcode は、Altair ライブラリの概要を簡単に説明するビデオをいくつか提供しています。
 
 .. List of links.
 .. _`Brief Introduction Videos`: https://calmcode.io/altair/introduction.html
@@ -56,10 +58,11 @@ Calmcode provides a few videos that give a brief overview of the Altair library.
 
 .. _altair-ecosystem:
 
-Related Projects
+関連プロジェクト
 ----------------
 
-This is a list of projects which are directly related to Altair. There are many other packages that can be used in tandem with Altair, e.g. `dashboard packages which you can read more about in the answers to this StackOverflow question`_.
+これは、Altair に直接関連するプロジェクトの一覧です。Altair と連携して使用できるパッケージは他にも多数あります。たとえば  `dashboard packages which you can read more about in the answers to this StackOverflow question`_ 。
+
 
 .. List of links.
 .. _`dashboard packages which you can read more about in the answers to this StackOverflow question`: https://stackoverflow.com/questions/49833866/making-dashboards-using-altair
@@ -67,7 +70,7 @@ This is a list of projects which are directly related to Altair. There are many 
 Vega-Lite_
 ~~~~~~~~~~
 
-The higher-level visualization grammar that Altair implements in Python.
+Altair が Python で実装する高レベルの可視化文法。
 
 .. List of links.
 .. _Vega-Lite: https://vega.github.io/vega-lite
@@ -75,7 +78,7 @@ The higher-level visualization grammar that Altair implements in Python.
 vl-convert_
 ~~~~~~~~~~~
 
-Python library for converting Altair/Vega-Lite chart specifications into static images (SVG or PNG) or Vega chart specifications without any external dependencies.
+外部依存なしで、Altair/Vega-Lite チャート仕様を静的画像 (SVG または PNG) または Vega チャート仕様に変換するための Python ライブラリ。
 
 .. List of links.
 .. _vl-convert: https://github.com/vega/vl-convert
@@ -83,7 +86,7 @@ Python library for converting Altair/Vega-Lite chart specifications into static 
 VegaFusion_
 ~~~~~~~~~~~
 
-VegaFusion provides server-side scaling for Altair charts, which can accelerate interactive charts, extract transformed data, and perform data-intensive aggregations on the server and prune unused columns from the source dataset yielding smaller size visualizations.
+VegaFusion は、Altair チャートのサーバー側スケーリングを提供します。これにより、インタラクティブ チャートを高速化し、変換されたデータを抽出し、サーバー上でデータ集約型の集計を実行し、ソース データセットから未使用の列を削除して、より小さなサイズの可視化を実現できます。
 
 .. List of links.
 .. _VegaFusion: https://vegafusion.io/
@@ -91,7 +94,7 @@ VegaFusion provides server-side scaling for Altair charts, which can accelerate 
 altair_data_server_
 ~~~~~~~~~~~~~~~~~~~
 
-Data transformer plugin that transparently serves data for charts.
+チャートのデータを透過的に提供するデータ・トランスフォーマー・プラグイン。
 
 .. List of links.
 .. _altair_data_server: https://github.com/altair-viz/altair_data_server
@@ -99,7 +102,7 @@ Data transformer plugin that transparently serves data for charts.
 altair_pandas_
 ~~~~~~~~~~~~~~
 
-Altair backend for the pandas plotting API.
+pandas プロット API 用の Altair バックエンド。
 
 .. List of links.
 .. _altair_pandas: https://github.com/altair-viz/altair_pandas
@@ -107,7 +110,7 @@ Altair backend for the pandas plotting API.
 vega_datasets_
 ~~~~~~~~~~~~~~
 
-Offline access to the Vega datasets used in the Altair documentation.
+Altair ドキュメントで使用される Vega データセットへのオフライン・アクセス。
 
 .. List of links.
 .. _vega_datasets: https://github.com/altair-viz/vega_datasets
@@ -115,7 +118,7 @@ Offline access to the Vega datasets used in the Altair documentation.
 altair_recipes_
 ~~~~~~~~~~~~~~~
 
-altair_recipes provides a collection of ready-made statistical graphics for Altair. See the `docs <https://altair-recipes.readthedocs.io/en/latest/>`__.
+altair_recipes は、Altair 用の既成の統計グラフのコレクションを提供します。 `docs <https://altair-recipes.readthedocs.io/en/latest/>`__ を参照してください。
 
 .. List of links.
 .. _altair_recipes: https://github.com/piccolbo/altair_recipes
@@ -123,7 +126,8 @@ altair_recipes provides a collection of ready-made statistical graphics for Alta
 nx_altair_
 ~~~~~~~~~~
 
-nx_altair is a library for drawing NetworkX_ graphs using Altair. It offers a similar draw API as NetworkX but returns Altair Charts instead. This allows users to apply Altair's rich interactive API to networks graphs. See the `docs <https://github.com/Zsailer/nx_altair/blob/master/examples/nx_altair-tutorial.ipynb>`__.
+nx_altair は、Altair を使用して NetworkX_ グラフを描画するためのライブラリです。NetworkX と同様の描画 API を提供しますが、代わりに Altair Charts を返します。これにより、ユーザーは Altair の豊富なインタラクティブ API をネットワーク グラフに適用できます。 `docs <https://github.com/Zsailer/nx_altair/blob/master/examples/nx_altair-tutorial.ipynb>`__ を参照してください。
+
 
 .. List of links.
 .. _nx_altair: https://github.com/Zsailer/nx_altair
@@ -132,7 +136,7 @@ nx_altair is a library for drawing NetworkX_ graphs using Altair. It offers a si
 `Altair Ally`_
 ~~~~~~~~~~~~~~
 
-Altair Ally is a companion package to Altair, which provides a few shortcuts to create common plots for exploratory data analysis, particularly those involving visualization of an entire dataframe.
+Altair Ally は Altair の付属パッケージであり、探索的データ分析、特にデータフレーム全体の可視化を伴う分析のための一般的なプロットを作成するためのショートカットをいくつか提供します。
 
 .. List of links.
 .. _`Altair Ally`: https://github.com/vega/altair_ally
@@ -140,7 +144,7 @@ Altair Ally is a companion package to Altair, which provides a few shortcuts to 
 gif_
 ~~~~
 
-gif is the extension for Altair and matplotlib animations. The library provides a simple, high-level decorator interface to create frames in a regular for-loop that can be stitched together on save. See the `docs <https://github.com/maxhumber/gif>`__.
+gif は、Altair および matplotlib アニメーションの拡張機能です。このライブラリは、保存時につなぎ合わせることができる通常の for ループでフレームを作成するための、シンプルで高レベルのデコレータ インターフェイスを提供します。 `docs <https://github.com/maxhumber/gif>`__ を参照してください。
 
 .. List of links.
 .. _gif: https://github.com/maxhumber/gif
@@ -148,7 +152,7 @@ gif is the extension for Altair and matplotlib animations. The library provides 
 `Altair in R`_
 ~~~~~~~~~~~~~~
 
-Altair in R provides an R interface to the Altair Python package. See the `docs <https://vegawidget.github.io/altair/>`__.
+Altair in R は、Altair Python パッケージへの R インターフェイスを提供します。 `docs <https://vegawidget.github.io/altair/>`__ を参照してください。
 
 .. List of links.
 .. _`Altair in R`: https://github.com/vegawidget/altair
