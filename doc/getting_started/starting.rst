@@ -8,15 +8,10 @@ Basic Statistical Visualization
 
 .. currentmodule:: altair
 
-This tutorial will guide you through the basic process of creating
-visualizations in Altair. First, you will need to make sure you have the Altair
-package and its dependencies installed (see :ref:`installation`).
-This tutorial will assume you are working within a Jupyter notebook user
-interface (such as JupyterLab, Colab or VS Code), so that plots are automatically rendered. 
-If you are using another interface, you may want to read about how Altair 
-plots are displayed before proceeding (see :ref:`displaying-charts`).
+このチュートリアルでは、Altair で視覚化を作成する基本的なプロセスについて説明します。まず、Altair パッケージとその依存関係がインストールされていることを確認する必要があります (:ref:`インストール` を参照)。
+このチュートリアルでは、プロットが自動的にレンダリングされるように、Jupyter ノートブック ユーザー インターフェイス (JupyterLab、Colab、VS Code など) 内で作業していることを前提としています。別のインターフェイスを使用している場合は、先に進む前に、Altair プロットの表示方法について読んでおくことをお勧めします (:ref:`チャートの表示` を参照)。
 
-Here is the outline of this basic tutorial:
+この基本的なチュートリアルの概要は次のとおりです:
 
 - :ref:`basic-tutorial-data`
 - :ref:`basic-tutorial-encodings-and-marks`
@@ -36,6 +31,8 @@ Dataframes. For the purposes of this tutorial, we'll start by importing pandas
 and creating a simple DataFrame to visualize, with a categorical variable in
 column a and a numerical variable in column b:
 
+Altair のデータは、pandas Dataframe を中心に構築されています。統計視覚化の特徴の 1 つは、`tidy <http://vita.had.co.nz/papers/tidy-data.html>`_ なDataframes から始まることです。このチュートリアルでは、pandas をインポートし、列 a にカテゴリ変数、列 b に数値変数を含む、視覚化する単純な DataFrame を作成することから始めます。
+
 .. altair-plot::
    :output: none
 
@@ -44,17 +41,15 @@ column a and a numerical variable in column b:
                         'b': [2, 7, 4, 1, 2, 6, 8, 4, 7]})
 
 
-When using Altair, datasets are most commonly provided as a Dataframe.
-As we will see, the labeled columns of the dataframe are an essential
-piece of plotting with Altair.
+Altair を使用する場合、データセットはデータフレームとして提供されるのが最も一般的です。
+後で説明するように、データフレームのラベル付き列は、Altair でのプロットに不可欠な要素です。
 
 .. _basic-tutorial-chart-object:
 
 The Chart Object
 ----------------
 
-The fundamental object in Altair is the :class:`Chart`, which takes a
-dataframe as a single argument:
+Altair の基本オブジェクトは :class:`Chart` で、データフレームを 1 つの引数として受け取ります:
 
 .. altair-plot::
     :output: none
@@ -62,33 +57,32 @@ dataframe as a single argument:
     import altair as alt
     chart = alt.Chart(data)
 
-So far, we have defined the Chart object, but we have not yet told the chart
-to *do* anything with the data. That will come next.
+ここまでで Chart オブジェクトを定義しましたが、データに対してチャートに *何か* を実行するように指示していません。これは次に説明します。
 
 .. _basic-tutorial-encodings-and-marks:
 
 Encodings and Marks
 -------------------
 
-With this chart object in hand, we can now specify how we would like the
-data to be visualized. This is done via the ``mark`` attribute of the chart
-object, which is most conveniently accessed via the ``Chart.mark_*`` methods.
-For example, we can show the data as a point using :meth:`~Chart.mark_point`:
+このチャート オブジェクトが手元にあるので、データをどのように可視化するかを指定できます。
+これはチャート オブジェクトの ``mark`` 属性を介して行われます。
+この属性には ``Chart.mark_*`` メソッドを介してアクセスするのが最も便利です。
+たとえば、:meth:`~Chart.mark_point` を使用して、データをポイントとして表示できます:
 
 
 .. altair-plot::
 
     alt.Chart(data).mark_point()
 
-Here the rendering consists of one point per row in the dataset, all plotted
-on top of each other, since we have not yet specified positions for these
-points.
 
-To visually separate the points, we can map various *encoding channels*, or
-*channels* for short, to columns in the dataset.
-For example, we could *encode* the variable ``a`` of the data with the
-``x`` channel, which represents the x-axis position of the points.
-This can be done straightforwardly via the :meth:`Chart.encode` method:
+ここでのレンダリングはデータセットの行ごとに 1 つのポイントで構成され、これらのポイントの位置をまだ指定していないため、すべてが互いに重なってプロットされます。
+
+ポイントを視覚的に分離するには、さまざまな *エンコード チャネル* (略して *チャネル* ) をデータセットの列にマッピングできます。
+
+たとえば、データの変数 ``a`` を、ポイントの x 軸の位置を表す ``x`` チャネルで *エンコード* できます。
+
+これは、:meth:`Chart.encode` メソッドを使用して簡単に実行できます:
+
 
 .. altair-plot::
 
@@ -96,17 +90,12 @@ This can be done straightforwardly via the :meth:`Chart.encode` method:
         x='a',
     )
 
-The ``encode()`` method builds a key-value mapping between encoding channels
-(such as ``x``, ``y``, ``color``, ``shape``, ``size``, etc.) to columns in
-the dataset, accessed by column name.
+``encode()`` メソッドは、列名でアクセスされるデータセット内の列に対するエンコード チャネル (``x``, ``y``, ``color``, ``shape``, ``size`` など) 間のキーと値のマッピングを構築します。
 
-For pandas dataframes, Altair automatically determines the appropriate data
-type for the mapped column, which in this case is a *nominal* value, or an
-unordered categorical.
+pandas データフレームの場合、Altair はマッピングされた列の適切なデータ型 (この場合は *名目* 値または順序なしのカテゴリ) を自動的に決定します。
 
-Though we've now separated the data by one attribute, we still have multiple
-points overlapping within each category. Let's further separate these by
-adding a ``y`` encoding channel, mapped to the ``"b"`` column:
+1 つの属性でデータを分離しましたが、各カテゴリ内で重複する複数のポイントがまだあります。 ``"b"`` 列にマッピングされた ``y`` エンコード チャネルを追加して、これらをさらに分離しましょう:
+
 
 .. altair-plot::
 
@@ -115,20 +104,20 @@ adding a ``y`` encoding channel, mapped to the ``"b"`` column:
         y='b'
     )
 
-The type of the data in the ``"b"`` column is again automatically-inferred
-by Altair, and this time is treated as a *quantitative* type (i.e. real-valued).
-Additionally, we see that grid lines and appropriate axis titles are
-automatically added as well.
+
+「b」列のデータの型は、再び Altair によって自動的に推測され、今回は *定量的* 型 (つまり、実数値) として扱われます。
+さらに、グリッド線と適切な軸タイトルも自動的に追加されます。
 
 .. _basic-tutorial-aggregation:
 
 Data Transformation: Aggregation
 --------------------------------
 
-To allow for more flexibility in how data are visualized, Altair has a built-in
-syntax for *aggregation* of data.
-For example, we can compute the average of all values by specifying this
-aggregate within the column identifier:
+データの視覚化方法をより柔軟にするために、Altair にはデータの *集計* 用の組み込み構文があります。
+
+たとえば、列識別子内でこの集計を指定することにより、すべての値の平均を計算できます:
+
+
 
 .. altair-plot::
 
@@ -137,12 +126,10 @@ aggregate within the column identifier:
         y='average(b)'
     )
 
-Now within each x-axis category, we see a single point reflecting the
-average of the values within that category.
+これで、各 x 軸カテゴリ内に、そのカテゴリ内の値の平均を反映する 1 つのポイントが表示されます。
 
-Typically, aggregated values are not represented by point markings,
-but by bar markings. We can do this by replacing :meth:`~Chart.mark_point`
-with :meth:`~Chart.mark_bar`:
+通常、集計値はポイント マークではなくバー マークで表されます。これを行うには、:meth:`~Chart.mark_point` を :meth:`~Chart.mark_bar` に置き換えます。
+
 
 .. altair-plot::
 
@@ -151,9 +138,7 @@ with :meth:`~Chart.mark_bar`:
         y='average(b)'
     )
 
-Because the categorical feature is mapped to the ``x``-axis, the result is
-a vertical bar chart. To get a horizontal bar chart, all we need is to
-swap the ``x`` and ``y`` keywords:
+カテゴリ特性は ``x`` 軸にマッピングされるため、結果は縦棒グラフになります。横棒グラフを作成するには、 ``x`` と ``y`` キーワードを入れ替えるだけです:
 
 .. altair-plot::
 
@@ -165,10 +150,10 @@ swap the ``x`` and ``y`` keywords:
 Aside: Examining the JSON Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Recall that Altair's main purpose is to convert plot specifications to a JSON
-string that conforms to the Vega-Lite schema.
-It is instructive here to use the :meth:`~Chart.to_json` method to inspect the
-JSON specification that Altair is exporting and sending as JSON to Vega-Lite:
+Altair の主な目的は、プロット仕様を Vega-Lite スキーマに準拠する JSON 文字列に変換することであることを思い出してください。
+
+ここでは、:meth:`~Chart.to_json` メソッドを使用して、Altair がエクスポートして Vega-Lite に JSON として送信している JSON 仕様を調べるのが有益です:
+
 
 .. altair-plot::
     :output: stdout
@@ -179,13 +164,14 @@ JSON specification that Altair is exporting and sending as JSON to Vega-Lite:
     )
     print(chart.to_json())
 
-Notice here that ``encode(x='a')`` has been expanded to a JSON structure with
-a ``field`` name, and a ``type`` for the data.
-The ``encode(y='b')`` has been expanded similarly and includes an ``aggregate``
-field.
 
-Altair's full shorthand syntax includes a way to specify the type of the
-column as well:
+ここで、``encode(x='a')`` が ``field`` 名とデータの ``type`` を持つ JSON 構造に展開されていることに注意してください。
+
+``encode(y='b')`` も同様に展開されており、``aggregate`` フィールドが含まれています。
+
+Altair の完全な省略構文には、列のタイプを指定する方法も含まれています:
+
+
 
 .. altair-plot::
     :output: stdout
@@ -193,7 +179,7 @@ column as well:
     y = alt.Y('average(b):Q')
     print(y.to_json())
 
-This short-hand is equivalent to spelling-out the parameters by name:
+この省略形は、パラメータを名前で綴ることと同じです:
 
 .. altair-plot::
     :output: repr
@@ -201,9 +187,7 @@ This short-hand is equivalent to spelling-out the parameters by name:
     y = alt.Y(field='b', type='quantitative', aggregate='average')
     print(y.to_json())
 
-This more verbose means of specifying channels can be used directly in
-Altair chart specifications, a fact that becomes useful when using some
-of the more advanced field configurations:
+このより詳細なチャネル指定方法は、Altair チャート仕様で直接使用できます。これは、より高度なフィールド構成を使用する場合に役立ちます:
 
 .. altair-plot::
 
@@ -218,13 +202,11 @@ of the more advanced field configurations:
 Customizing your Visualization
 ------------------------------
 
-By default, Altair via Vega-Lite makes some choices about default properties
-of the visualization.
-Altair also provides an API to customize the look of the visualization.
-For example, we can specify the axis titles using the :meth:`title` method
-of channel classes, and we can specify the color of the mark by setting
-the ``color`` keyword of the ``Chart.mark_*`` method to any valid HTML
-color string:
+デフォルトでは、Altair は Vega-Lite を介して視覚化のデフォルト プロパティについていくつかの選択を行います。
+
+Altair は視覚化の外観をカスタマイズするための API も提供します。
+
+たとえば、チャネル クラスの :meth:`title` メソッドを使用して軸のタイトルを指定したり、 ``Chart.mark_*`` メソッドの ``color`` キーワードを任意の有効な HTML 色文字列に設定してマークの色を指定したりできます。
 
 .. altair-plot::
 
@@ -239,11 +221,9 @@ color string:
 Publishing your Visualization
 -----------------------------
 
-Once you have visualized your data, perhaps you would like to publish it
-somewhere on the web. This can be done straightforwardly using the
-Vega-Embed_ Javascript package.
-A simple example of a stand-alone HTML document can be generated for any
-chart using the :meth:`Chart.save` method:
+データを可視化したら、それを Web 上のどこかに公開したいと考えるかもしれません。これは、Vega-Embed_ Javascript パッケージを使用して簡単に実行できます。
+
+:meth:`Chart.save` メソッドを使用して、任意のチャートのスタンドアロン HTML ドキュメントの簡単な例を生成できます。
 
 .. code-block:: python
 
@@ -253,9 +233,7 @@ chart using the :meth:`Chart.save` method:
     )
     chart.save('chart.html')
 
-The basic HTML template produces output that looks like this, where the JSON
-specification for your plot produced by :meth:`Chart.to_json` should be stored
-in the ``spec`` Javascript variable:
+基本的な HTML テンプレートは次のような出力を生成します。:meth:`Chart.to_json` によって生成されたプロットの JSON 仕様は ``spec`` Javascript 変数に保存される必要があります:
 
 .. code-block:: html
 
@@ -276,10 +254,8 @@ in the ``spec`` Javascript variable:
     </body>
   </html>
 
-The :meth:`~Chart.save` method provides a convenient way to save such HTML
-output to file.
-For more information on embedding Altair/Vega-Lite, see the documentation of the Vega-Embed_ project.
+:meth:`~Chart.save` メソッドは、このような HTML 出力をファイルに保存する便利な方法を提供します。
 
-
+Altair/Vega-Lite の埋め込みの詳細については、Vega-Embed_ プロジェクトのドキュメントを参照してください。
 
 .. _Vega-Embed: https://github.com/vega/vega-embed
