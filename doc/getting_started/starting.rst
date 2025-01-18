@@ -24,14 +24,9 @@ Basic Statistical Visualization
 データ
 --------
 
-Data in Altair is built around the pandas Dataframe. One of the defining
-characteristics of statistical visualization is that it begins with
-`tidy <http://vita.had.co.nz/papers/tidy-data.html>`_
-Dataframes. For the purposes of this tutorial, we'll start by importing pandas
-and creating a simple DataFrame to visualize, with a categorical variable in
-column a and a numerical variable in column b:
+Altair のデータは、pandas Dataframe を中心に構築されています。統計視覚化の特徴の 1 つは `tidy <http://vita.had.co.nz/papers/tidy-data.html>`_ なDataframes から始まることです。
 
-Altair のデータは、pandas Dataframe を中心に構築されています。統計視覚化の特徴の 1 つは、`tidy <http://vita.had.co.nz/papers/tidy-data.html>`_ なDataframes から始まることです。このチュートリアルでは、pandas をインポートし、列 a にカテゴリ変数、列 b に数値変数を含む、視覚化する単純な DataFrame を作成することから始めます。
+このチュートリアルでは、pandas をインポートし、列 a にカテゴリ変数、列 b に数値変数を含む、視覚化する単純な DataFrame を作成することから始めます:
 
 .. altair-plot::
    :output: none
